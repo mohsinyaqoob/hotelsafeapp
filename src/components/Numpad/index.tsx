@@ -1,12 +1,45 @@
+import { connect } from "react-redux";
+import { LockOutlined, UnlockOutlined } from "@ant-design/icons";
+import {
+  clearDisplay,
+  handleNumberInput,
+  lockSafe,
+  unlockSafe,
+} from "../../redux/actions/hotel-safe";
+import { RootReducerType } from "../../types/HotelSafe";
+
 import "./index.css";
 
-type Props = {
-  handleNumberClick: React.MouseEventHandler<HTMLButtonElement>;
-  handleSubmit: React.MouseEventHandler<HTMLButtonElement>;
-  clearDisplay: React.MouseEventHandler<HTMLButtonElement>;
-};
+type Props = {};
 
-const Numpad = ({ handleNumberClick, handleSubmit, clearDisplay }: Props) => {
+const Numpad = ({
+  displayText,
+  safeOpen,
+  handleNumberInput,
+  clearDisplay,
+  unlockSafe,
+  lockSafe,
+}: any) => {
+  const handleNumberClick = (e: any) => {
+    if (displayText.length < 4) {
+      handleNumberInput(e.target.innerText);
+    }
+  };
+
+  const handleSubmit = () => {
+    // If safe in closed,
+    if (!safeOpen) {
+      // call validate action
+      unlockSafe(displayText);
+    } else {
+      // If safe is open, then lock it if pin is correct
+      lockSafe(displayText);
+    }
+  };
+
+  const clearInput = () => {
+    clearDisplay();
+  };
   return (
     <div className="numpad__wrapper">
       <button onClick={handleNumberClick} className="numpad__number-container">
@@ -36,7 +69,7 @@ const Numpad = ({ handleNumberClick, handleSubmit, clearDisplay }: Props) => {
       <button onClick={handleNumberClick} className="numpad__number-container">
         9
       </button>
-      <button onClick={clearDisplay} className="numpad__number-container">
+      <button onClick={clearInput} className="numpad__number-container">
         CLR
       </button>
       <button onClick={handleNumberClick} className="numpad__number-container">
@@ -45,12 +78,22 @@ const Numpad = ({ handleNumberClick, handleSubmit, clearDisplay }: Props) => {
       <button
         type="submit"
         onClick={handleSubmit}
-        className="numpad__number-container"
+        className={`numpad__number-container`}
       >
-        {"⏎"}
+        {safeOpen ? <LockOutlined /> : <UnlockOutlined />}
       </button>
     </div>
   );
 };
 
-export default Numpad;
+const mapStateToProps = (state: RootReducerType) => ({
+  displayText: state.hotelSafe.displayText,
+  safeOpen: state.hotelSafe.safeOpen,
+});
+
+export default connect(mapStateToProps, {
+  handleNumberInput,
+  clearDisplay,
+  unlockSafe,
+  lockSafe,
+})(Numpad);

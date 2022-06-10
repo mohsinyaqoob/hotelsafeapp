@@ -1,17 +1,24 @@
+import { connect } from "react-redux";
+import { RootReducerType } from "../../types/HotelSafe";
 import "./index.css";
-type Props = {
-  inputPin: string;
-};
 
-const Display = (props: Props) => {
-  const { inputPin } = props;
+const Display = ({ displayText, error }: any) => {
   return (
     <div className="display__wrapper">
       <div className="display__screen">
-        <span className="display__screen-text">{inputPin}</span>
+        <span className="display__screen-text">
+          {error || displayText || ""}
+        </span>
       </div>
     </div>
   );
 };
 
-export default Display;
+const mapStateToProps = (state: RootReducerType) => {
+  return {
+    displayText: state.hotelSafe.displayText,
+    error: state.hotelSafe.error,
+  };
+};
+
+export default connect(mapStateToProps, {})(Display);
