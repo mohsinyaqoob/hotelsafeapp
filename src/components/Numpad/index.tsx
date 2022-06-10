@@ -1,8 +1,12 @@
-import React from "react";
-
 import "./index.css";
 
-const Numpad = ({ handleNumberClick, handleSubmit, clearDisplay }: any) => {
+type Props = {
+  handleNumberClick: React.MouseEventHandler<HTMLButtonElement>;
+  handleSubmit: React.MouseEventHandler<HTMLButtonElement>;
+  clearDisplay: React.MouseEventHandler<HTMLButtonElement>;
+};
+
+const Numpad = ({ handleNumberClick, handleSubmit, clearDisplay }: Props) => {
   return (
     <div className="numpad__wrapper">
       <button onClick={handleNumberClick} className="numpad__number-container">

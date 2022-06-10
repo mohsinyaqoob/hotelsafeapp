@@ -1,8 +1,8 @@
-import React from "react";
 import "./index.css";
+
 type Props = {
   safeOpen: boolean;
-  style?: any;
+  style?: React.CSSProperties;
 };
 
 const Indicator = ({ safeOpen, ...rest }: Props) => {
