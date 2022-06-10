@@ -9,7 +9,7 @@
 .home__safe-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   overflow: hidden;
 }
@@ -22,6 +22,10 @@
   .home__safe-container {
     flex-direction: column;
     gap: 32px;
+  }
+
+  .home__safe-container {
+    align-items: center;
   }
 }
 

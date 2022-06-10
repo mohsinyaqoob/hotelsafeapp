@@ -1,11 +1,12 @@
 .display__wrapper {
   width: 100%;
   font-family: "Consolas";
+  padding: 0;
 }
 .display__screen {
   display: flex;
   flex: 1;
-  background-color: gray;
+  background-color: #9aa671;
   padding: 16px;
   border-radius: 12px;
   justify-content: center;
@@ -15,7 +16,7 @@
 
 .display__screen-text {
   text-align: center;
-  font-size: 1.25rem;
-  color: #ccc;
+  font-size: 1.5rem;
+  color: black;
   font-weight: bold;
 }

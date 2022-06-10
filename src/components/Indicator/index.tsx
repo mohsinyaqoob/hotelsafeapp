@@ -1,3 +1,4 @@
+import { LockOutlined, UnlockOutlined } from "@ant-design/icons";
 import { connect } from "react-redux";
 import { RootReducerType } from "../../types/HotelSafe";
 import "./index.css";
@@ -13,7 +14,9 @@ const Indicator = ({ safeOpen }: any) => {
       <div
         className="indicator"
         style={{ background: safeOpen ? "green" : "red" }}
-      ></div>
+      >
+        {safeOpen ? <UnlockOutlined /> : <LockOutlined />}
+      </div>
       <h3 className="indicator__text">
         {safeOpen
           ? "Safe Open and can be locked only by using the same pin"

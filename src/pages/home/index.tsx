@@ -7,18 +7,20 @@ import "./index.css";
 
 const Home: React.FC = () => {
   return (
-    <div className="home__safe-box-wrapper">
-      <div className="home__safe-container">
-        {/* Numpad Component*/}
-        <Numpad />
-        <div className="home__right-sider">
-          {/* Display Component */}
-          <Display />
-          {/* Indicator Component */}
-          <Indicator style={{ marginTop: "64px" }} />
+    <>
+      <div className="home__safe-box-wrapper">
+        <div className="home__safe-container">
+          {/* Numpad Component*/}
+          <Numpad />
+          <div className="home__right-sider">
+            {/* Display Component */}
+            <Display />
+            {/* Indicator Component */}
+            <Indicator style={{ marginTop: "64px" }} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -3,7 +3,11 @@
   height: 64px;
   background: green;
   border-radius: 50%;
-  border: 6px solid white;
+  border: 4px solid white;
+  font-size: 2.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .indicator__text {

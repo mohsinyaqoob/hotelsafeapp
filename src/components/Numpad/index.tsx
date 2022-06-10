@@ -10,8 +10,6 @@ import { RootReducerType } from "../../types/HotelSafe";
 
 import "./index.css";
 
-type Props = {};
-
 const Numpad = ({
   displayText,
   safeOpen,
