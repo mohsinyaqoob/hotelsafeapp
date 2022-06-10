@@ -1,0 +1,33 @@
+.home__safe-box-wrapper {
+  width: 90%;
+  height: auto;
+  background: rgb(27, 54, 80);
+}
+
+.home__safe-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.home__safe-container:first-child {
+  flex: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .home__safe-container {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+.home__right-sider {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+  justify-content: center;
+}

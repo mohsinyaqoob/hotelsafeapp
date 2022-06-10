@@ -1,0 +1,11 @@
+.indicator {
+  width: 64px;
+  height: 64px;
+  background: green;
+  border-radius: 50%;
+  border: 6px solid white;
+}
+
+.indicator__text {
+  color: white;
+}

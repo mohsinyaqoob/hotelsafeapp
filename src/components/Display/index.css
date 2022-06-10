@@ -1,0 +1,22 @@
+.display__wrapper {
+  width: 100%;
+  font-family: "Consolas";
+}
+.display__screen {
+  display: flex;
+  flex: 1;
+  background-color: gray;
+  padding: 16px;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+}
+
+.display__screen-text {
+  text-align: center;
+  letter-spacing: 2rem;
+  font-size: 1.25rem;
+  color: #ccc;
+  font-weight: bold;
+}

@@ -1,0 +1,9 @@
+.layout__container {
+  width: 90%;
+  padding: 8px;
+  margin: auto;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
